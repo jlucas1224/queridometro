@@ -16,7 +16,7 @@ export function handleCreateUser(username, email, password) {
 
             await addUserDocument(username, email, user.uid);
 
-            window.location.href = '/login'
+            window.location.href = '/queridometro/login'
         })
         .catch((error) => {
             console.error(error.message)
