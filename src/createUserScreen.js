@@ -7,7 +7,7 @@ import { addUserDocument } from "./Firebase/firebase";
 function CreateUserScreen() {
     const auth = getAuth();
     const navigate = useNavigate();
-
+    console.log('aaaateste')
     function handleCreateUser(username, email, password) {
     
         createUserWithEmailAndPassword(auth, email, password)
