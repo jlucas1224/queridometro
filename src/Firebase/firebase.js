@@ -75,7 +75,6 @@ async function handleResetUsersStatus() {
     await usersRef.then((querySnapshot) => {
         querySnapshot.docs.map(doc => {
             usersIds.push(doc.id)
-            console.log(doc.id, 'aqui')
         })
     })
 
