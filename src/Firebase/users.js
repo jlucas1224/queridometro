@@ -2,6 +2,7 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 import { addUserDocument } from "./firebase";
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
+import { useNavigate } from "react-router";
 
 export const userState = {
     users: [],
@@ -9,20 +10,6 @@ export const userState = {
 
 const auth = getAuth();
 
-export function handleCreateUser(username, email, password) {
-    createUserWithEmailAndPassword(auth, email, password)
-        .then(async (userCredential) =>{
-            const user = userCredential.user;
-
-            await addUserDocument(username, email, user.uid);
-
-            window.location.href = '/queridometro/login'
-        })
-        .catch((error) => {
-            console.error(error.message)
-            alert(error.message)
-        })
-}
 
 export async function handleSignIn(email, password) {
     signInWithEmailAndPassword(auth, email, password)

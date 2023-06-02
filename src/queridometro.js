@@ -3,6 +3,7 @@ import { db } from "./Firebase/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import UserQueridometro from "./userQueridometro";
+import { useNavigate } from "react-router-dom";
 
 function Queridometro() {
     const currentUserUid = localStorage.getItem('currentUserUid')

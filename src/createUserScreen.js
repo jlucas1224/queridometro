@@ -1,8 +1,30 @@
-import { handleCreateUser } from "./Firebase/users";
 import { Link } from 'react-router-dom';
 import './createUserScreen.css'
+import { useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { addUserDocument } from "./Firebase/firebase";
 
 function CreateUserScreen() {
+    const auth = getAuth();
+    const navigate = useNavigate();
+
+    function handleCreateUser(username, email, password) {
+    
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(async (userCredential) =>{
+                const user = userCredential.user;
+    
+                await addUserDocument(username, email, user.uid);
+    
+                navigate('/queridometro/login')
+                console.log('Usuário criado com sucesso!')
+            })
+            .catch((error) => {
+                console.error(error.message)
+                alert(error.message)
+            })
+    }
+
     const SubmitCreateUser = async (e) => {
         e.preventDefault();
 
