@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/queridometro" element={<Queridometro/>}/>
+        <Route path="/queridometroVote" element={<Queridometro/>}/>
         <Route path="/queridometro/result" element={<Result />}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<LoginScreen/>}/>
