@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore";
+import { doc, getFirestore } from "firebase/firestore";
+import { collection, addDoc, getDocs, updateDoc } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCTVLDLjodIhWG6jX3h74w-Tw1z_seVSTk",
@@ -13,7 +12,6 @@ const firebaseConfig = {
     measurementId: "G-KSQC0TFNPX"
 };
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export const db = getFirestore(app);
 
 /**
@@ -24,13 +22,77 @@ export const db = getFirestore(app);
 export async function addUserDocument(username, email, uid) {
     try {
         const docRef = await addDoc(collection(db, "users"), {
-          username: username,
-          email: email,
-          uid: uid
+            username: username,
+            email: email,
+            uid: uid,
+            cobra: 0,
+            vomito: 0,
+            sorriso: 0,
+            coracao: 0,
+            raiva: 0,
+            coracao_partido: 0,
+            bomba: 0,
+            banana: 0,
+            planta: 0,
+            votedToday: false,
         });
-        console.log("Document written with ID: ", docRef.id);
+
     } catch (e) {
         console.error("Error adding document: ", e);
     }
 }
 
+async function updateDate(date) {
+    const dateRef = doc(db, "date", "dateNow")
+
+    await updateDoc(dateRef, {
+        date: date,
+    })
+}
+
+async function resetUsersStatus(usersIds) {
+    await usersIds.forEach(async (id) => {
+        const userRef = doc(db, "users", id)
+        await updateDoc(userRef, {
+            votedToday: false,
+            cobra: 0,
+            vomito: 0,
+            sorriso: 0,
+            coracao: 0,
+            raiva: 0,
+            coracao_partido: 0,
+            bomba: 0,
+            banana: 0,
+            planta: 0,
+        })
+    })
+}
+
+async function handleResetUsersStatus() {
+    const usersRef = getDocs(collection(db, "users"))
+    const usersIds = []
+
+    await usersRef.then((querySnapshot) => {
+        querySnapshot.docs.map(doc => {
+            usersIds.push(doc.id)
+            console.log(doc.id, 'aqui')
+        })
+    })
+
+    await resetUsersStatus(usersIds)
+}
+
+export async function validateDay() {
+    let date = []
+    const today = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`
+
+    await getDocs(collection(db, "date")).then((querySnapshot) => {
+        querySnapshot.docs.map(doc => doc.data())
+        date = querySnapshot.docs.map(doc => doc.data())
+    })
+
+    if (date[0].date === today) return
+
+    await updateDate(today)
+    await handleResetUsersStatus()
+}

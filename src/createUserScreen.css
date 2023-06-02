@@ -1,0 +1,197 @@
+body {
+    background: rgb(26,36,0);
+    background: linear-gradient(90deg, rgba(26,36,0,1) 0%, rgba(250,108,159,1) 0%, rgba(255,225,64,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-top: 12%;
+}
+
+.register-box {
+    text-align: center;
+    width: 350px;
+	height: 550px;
+	overflow: hidden;
+	background: cover;
+	border-radius: 10px;
+	box-shadow: 5px 20px 50px #000;
+}
+
+label {
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+.waiting-label {
+    color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+input[type = text], input[type = password] {
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+input[type = submit] {
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #db5485;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+
+input[type = submit]:hover {
+	background: #e0115c;
+}
+
+.login-button {
+    position: relative;
+    top: 120px;
+    height: 200px;
+	background: #eee;
+	border-radius: 60% / 20%;
+}
+
+.register-button {
+    height: 200px;
+	background: #eee;
+	border-radius: 60% / 20%;
+}
+
+.register-button label {
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+.login-button label {
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+.queridometro-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.emoji-button {
+    background-color: white;
+    margin-right: 10px;
+    color: white;
+    border: none;
+    padding: 5px;
+    font-size: 31px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 2px 4px darkslategray;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 70%;
+    z-index: 0;
+}
+
+.emoji-button .emoji-count {
+    z-index: 200;
+    margin-top: 5px;
+}
+
+.confirm-queridometro {
+    width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #db5485;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+
+.loading-container {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin: 0 32px;
+}
+
+@keyframes movingLine {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    33.3%, 66% {
+        opacity: 0.8;
+        width: 100%;
+    }
+
+    85% {
+        width: 0;
+        left: initial;
+        right: 0;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 0;
+    }
+}
+
+.loading-text {
+    font-size: 5vw;
+    line-height: 64px;
+    letter-spacing: 10px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.loading-text span {
+    animation: moveLetters 2.4s infinite ease-in-out;
+    transform: translatex(0);
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    text-shadow: 0px 2px 10px rgba(46, 74, 81, 0.3); 
+}
+
+.register-box p {
+    color: red;
+}
