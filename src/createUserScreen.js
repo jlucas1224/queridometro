@@ -13,11 +13,11 @@ function CreateUserScreen() {
         createUserWithEmailAndPassword(auth, email, password)
             .then(async (userCredential) =>{
                 const user = userCredential.user;
+                console.log('Usuário criado com sucesso!')
     
                 await addUserDocument(username, email, user.uid);
     
                 navigate('/queridometro/login')
-                console.log('Usuário criado com sucesso!')
             })
             .catch((error) => {
                 console.error(error.message)
