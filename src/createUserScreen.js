@@ -30,7 +30,7 @@ function CreateUserScreen() {
 
             <div className="register-button">
                 <label>
-                    <Link to="/queridometro/login" style={{textDecoration: 'none'}}>Login</Link>
+                    <Link to="/login" style={{textDecoration: 'none'}}>Login</Link>
                 </label>
             </div>
         </div>

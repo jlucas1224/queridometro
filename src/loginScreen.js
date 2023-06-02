@@ -23,7 +23,7 @@ function LoginScreen() {
             </form>
             <div className="login-button">
                 <label>
-                    <Link to="/queridometro/create-user" style={{textDecoration: 'none'}}>Create User</Link>
+                    <Link to="/create-user" style={{textDecoration: 'none'}}>Create User</Link>
                 </label>
             </div>
         </div>
