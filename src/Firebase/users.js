@@ -16,7 +16,7 @@ export function handleCreateUser(username, email, password) {
 
             await addUserDocument(username, email, user.uid);
 
-            window.location.href = '/login'
+            window.location.href = '/queridometro/login'
         })
         .catch((error) => {
             console.error(error.message)
@@ -33,7 +33,7 @@ export async function handleSignIn(email, password) {
             
             await getUsers()
 
-            userState.users.find((user) => user.uid === localStorage.getItem('currentUserUid')).votedToday === true ? window.location.href = '/result' : window.location.href = '/vote'
+            userState.users.find((user) => user.uid === localStorage.getItem('currentUserUid')).votedToday === true ? window.location.href = '/queridometro/result' : window.location.href = '/queridometro/vote'
         })
         .catch((error) => {
             console.error(error)

@@ -150,29 +150,23 @@ input[type = submit]:hover {
     margin: 0 32px;
 }
 
-@keyframes movingLine {
-    0% {
-        opacity: 0;
-        width: 0;
-    }
+@keyframes moveLetters {
+	0% {
+	  transform: translateX(-15vw);
+	  opacity: 0;
+	}
+	
+	33.3%, 66% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+	
+	100% {
+	  transform: translateX(15vw);
+	  opacity: 0;
+	}
+  }
 
-    33.3%, 66% {
-        opacity: 0.8;
-        width: 100%;
-    }
-
-    85% {
-        width: 0;
-        left: initial;
-        right: 0;
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        width: 0;
-    }
-}
 
 .loading-text {
     font-size: 5vw;

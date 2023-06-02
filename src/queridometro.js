@@ -39,7 +39,7 @@ function Queridometro() {
         
         if (!currentUser.votedToday) return
 
-        window.location.href = '/result'
+        window.location.href = '/queridometro/result'
     }
 
     async function confirmQueridometro() {
@@ -64,7 +64,7 @@ function Queridometro() {
 
         await updateVotedToday(currentUserId)
 
-        window.location.href = '/result'
+        window.location.href = '/queridometro/result'
     }
 
     return (
