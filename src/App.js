@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/queridometro/vote" element={<Queridometro/>}/>
         <Route path="/queridometro/result" element={<Result />}/>
-        <Route path="/queridometro" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<LoginScreen/>}/>
         <Route path="/create-user" element={<CreateUserScreen/>} />
       </Routes>
