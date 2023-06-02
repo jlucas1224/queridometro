@@ -33,7 +33,7 @@ export async function handleSignIn(email, password) {
             
             await getUsers()
 
-            userState.users.find((user) => user.uid === localStorage.getItem('currentUserUid')).votedToday === true ? window.location.href = '/queridometro/result' : window.location.href = '/queridometroVote'
+            userState.users.find((user) => user.uid === localStorage.getItem('currentUserUid')).votedToday === true ? window.location.href = '/queridometro/result' : window.location.href = '/queridometro/vote'
         })
         .catch((error) => {
             console.error(error)
