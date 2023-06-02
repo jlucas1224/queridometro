@@ -2,30 +2,9 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 import { addUserDocument } from "./firebase";
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
-import { useNavigate } from "react-router";
 
 export const userState = {
     users: [],
-}
-
-const auth = getAuth();
-
-
-export async function handleSignIn(email, password) {
-    signInWithEmailAndPassword(auth, email, password)
-        .then(async (userCredential) => {
-            const user = userCredential.user
-
-            localStorage.setItem('currentUserUid', user.uid)
-            
-            await getUsers()
-
-            userState.users.find((user) => user.uid === localStorage.getItem('currentUserUid')).votedToday === true ? window.location.href = '/queridometro/result' : window.location.href = '/queridometro/vote'
-        })
-        .catch((error) => {
-            console.error(error)
-            alert(error.message)
-        });
 }
 
 export async function getUsers() {

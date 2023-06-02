@@ -2,14 +2,13 @@ import { updateUserDocument, updateVotedToday, userState } from "./Firebase/user
 import { db } from "./Firebase/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import UserQueridometro from "./userQueridometro";
+import UserQueridometro from "./userQueridometro"; 
 import { useNavigate } from "react-router-dom";
 
 function Queridometro() {
     const currentUserUid = localStorage.getItem('currentUserUid')
-
+    const navigate = useNavigate();
     const users =  getDocs(collection(db, "users"))
-    
     const [usersInfo, setUsersInfo] = useState([])
 
     useEffect(() => {
@@ -40,7 +39,7 @@ function Queridometro() {
         
         if (!currentUser.votedToday) return
 
-        window.location.href = '/queridometro/result'
+        navigate('/queridometro/result')
     }
 
     async function confirmQueridometro() {
@@ -65,7 +64,7 @@ function Queridometro() {
 
         await updateVotedToday(currentUserId)
 
-        window.location.href = '/queridometro/result'
+        navigate('/queridometro/result')
     }
 
     return (
