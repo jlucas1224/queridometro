@@ -21,17 +21,7 @@ function Queridometro() {
     }
 
     async function handleSetUserInfo() {
-        await users.then((querySnapshot) => {
-            querySnapshot.docs.map(doc => {
-                userState.users.push(doc.data())
-                userState.users.forEach((user) => {
-                    if (user.uid === doc.data().uid) {
-                        user.id = doc.id
-                    }
-                })
-                setUsersInfo(userState.users)
-            })
-        })
+        setUsersInfo(userState.users)
     }
 
     function validateVote() {

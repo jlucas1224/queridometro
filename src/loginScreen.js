@@ -33,7 +33,7 @@ function LoginScreen() {
                 
                 await getUsers()
 
-                userState.users.find((user) => user.uid === localStorage.getItem('currentUserUid')).votedToday === true ? navigate ('/queridometro/result') : navigate('/queridometro/vote')
+                userState.users.find((user) => user.uid === localStorage.getItem('currentUserUid')).votedToday === true ? navigate('/queridometro/result') : navigate('/queridometro/vote')
             })
             .catch((error) => {
                 console.error(error)
