@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/queridometro/static/css/main.773e4547.css",
+    "main.js": "/queridometro/static/js/main.b2673663.js",
+    "static/js/787.61eab2d6.chunk.js": "/queridometro/static/js/787.61eab2d6.chunk.js",
+    "index.html": "/queridometro/index.html",
+    "main.773e4547.css.map": "/queridometro/static/css/main.773e4547.css.map",
+    "main.b2673663.js.map": "/queridometro/static/js/main.b2673663.js.map",
+    "787.61eab2d6.chunk.js.map": "/queridometro/static/js/787.61eab2d6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.773e4547.css",
+    "static/js/main.b2673663.js"
+  ]
+}
