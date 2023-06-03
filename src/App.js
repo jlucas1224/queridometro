@@ -5,6 +5,8 @@ import CreateUserScreen from './createUserScreen';
 import LoginScreen from './loginScreen';
 import Queridometro from './queridometro';
 import Result from './result';
+import { useEffect } from 'react';
+import { validateDay } from './Firebase/firebase';
 
 function Home() {
   return <div className='register-box'>
@@ -19,6 +21,10 @@ function Home() {
 }
 
 function App() {
+  useEffect(() => {
+    validateDay()
+  })
+
   return (
     <Router>
       <Routes>
