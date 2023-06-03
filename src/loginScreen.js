@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 function LoginScreen() {
     const auth = getAuth()
     const navigate = useNavigate()
-
+    console.log(userState.users)
     async function getUsers() {
         const users = getDocs(collection(db, "users"))
 

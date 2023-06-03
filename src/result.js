@@ -8,6 +8,7 @@ function Result() {
     const users =  getDocs(collection(db, "users"))
     const [usersInfo, setUsersInfo] = useState([])
     const [waiting, setWaiting] = useState(false)
+    const [usersNotVoted, setUsersNotVoted] = useState([])
 
     useEffect(() => {
         initializePage()
@@ -17,8 +18,9 @@ function Result() {
         await handleSetUsersInfo()
 
         validateVote()
-    }
 
+        setUsersNotVoted(userState.users.filter((user) => user.votedToday === false))
+    }
 
     async function handleSetUsersInfo() {
         userState.users = []
@@ -64,6 +66,15 @@ function Result() {
                             <span>.</span>
                         </div>
                         <p className="waiting-label">Cobra a galera lá no zap 👍</p>
+                        <div className="dont-vote">
+                            <h3>Não votou 👇</h3>
+                            {
+                                
+                                usersNotVoted.map((user) => {
+                                    return <h4 key={user.uid}>{user.username}</h4>
+                                })
+                            }
+                        </div>
                     </div> 
                     :
                     usersInfo.map((user) => {

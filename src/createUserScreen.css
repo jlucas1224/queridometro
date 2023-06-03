@@ -189,3 +189,21 @@ input[type = submit]:hover {
 .register-box p {
     color: red;
 }
+
+.dont-vote {
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 20px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+h3 {
+	color: red;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+h4 {
+	border-radius: 10px;
+	margin: 5px 10px 10px 5px;
+}
