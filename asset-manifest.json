@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/queridometro/static/css/main.d78ce5bd.css",
-    "main.js": "/queridometro/static/js/main.eafe4fd2.js",
+    "main.css": "/queridometro/static/css/main.3d568821.css",
+    "main.js": "/queridometro/static/js/main.b4c1b814.js",
     "static/js/787.61eab2d6.chunk.js": "/queridometro/static/js/787.61eab2d6.chunk.js",
     "index.html": "/queridometro/index.html",
-    "main.d78ce5bd.css.map": "/queridometro/static/css/main.d78ce5bd.css.map",
-    "main.eafe4fd2.js.map": "/queridometro/static/js/main.eafe4fd2.js.map",
+    "main.3d568821.css.map": "/queridometro/static/css/main.3d568821.css.map",
+    "main.b4c1b814.js.map": "/queridometro/static/js/main.b4c1b814.js.map",
     "787.61eab2d6.chunk.js.map": "/queridometro/static/js/787.61eab2d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d78ce5bd.css",
-    "static/js/main.eafe4fd2.js"
+    "static/css/main.3d568821.css",
+    "static/js/main.b4c1b814.js"
   ]
 }
