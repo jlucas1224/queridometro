@@ -21,6 +21,8 @@ function Result() {
 
 
     async function handleSetUsersInfo() {
+        userState.users = []
+
         await users.then((querySnapshot) => {
             querySnapshot.docs.map(doc => {
                 userState.users.push(doc.data())
